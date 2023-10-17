@@ -8,11 +8,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 25px;
 }
 
 .title {
     margin-top: 20px;
-    color: #ecf0f1;
+    color: #7b8383;
     /* Light gray text color */
     font-size: 40px;
     display: flex;
@@ -21,7 +22,7 @@
 }
 
 .title span {
-    color: #3498db;
+    color: #43e687;
     /* Blue color for the span */
     padding-left: 15px;
 }
@@ -36,15 +37,16 @@
     background: #948f8f;
     /* Red background */
     font-size: 20px;
-    color: #3a3c3d;
+    color: #0c0d0e;
     /* Light gray text color */
     margin-top: 15px;
     margin-bottom: 30px;
     transition: background 0.3s, color 0.3s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .reset:hover {
-    background: #dfbbbb;
+    background: #6ace97;
     /* Darker red background on hover */
 }
 
@@ -64,7 +66,10 @@
     color: #ecf0f1;
     /* Light gray text color */
     transition: background 0.3s, color 0.3s;
+    margin: 10px;
+    /* Add some space around each checkbox */
 }
+
 
 .boxes:hover {
     background: #2e4453;

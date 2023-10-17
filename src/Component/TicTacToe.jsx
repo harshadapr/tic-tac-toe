@@ -3,7 +3,7 @@ import "./TicTacToe.css"
 import circle from "../Images/circle.png"
 import cross from "../Images/cross.png"
 import winnerGif from "../Images/animation.gif";
-
+import celebration from "../Images/celebration1.webp"
 
 
 let data = ["", "", "", "", "", "", "", "", ""];
@@ -128,10 +128,10 @@ export default function TicTacToe() {
     const Result = (winner) => {
         setlock(true);
         if (winner === 'x') {
-            titleRef.current.innerHTML = `Congratulations:Winner is <img src=${cross}>`
+            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is  <img src=${cross}>`
         }
         else {
-            titleRef.current.innerHTML = `Congratulations:Winner is <img src=${circle}>`
+            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is <img src=${circle}>`
         }
         if (winner === null) {
             declareTie();
