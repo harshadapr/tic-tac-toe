@@ -124,3 +124,13 @@
         transform: rotate(-20deg);
     }
 }
+
+.showWinnerGif {
+    background-image: url('../Images/full.gif');
+    /* Replace 'path/to/your/animation.gif' with the actual path to your GIF file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    /* Set the text color to white or any color that is visible on the GIF background */
+}
