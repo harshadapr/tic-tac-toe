@@ -3,7 +3,7 @@ import "./TicTacToe.css"
 import circle from "../Images/circle.png"
 import cross from "../Images/cross.png"
 import winnerGif from "../Images/animation.gif";
-import celebration from "../Images/celebration.gif"
+import celebration from "../Images/celebration1.webp"
 
 
 let data = ["", "", "", "", "", "", "", "", ""];
@@ -48,7 +48,6 @@ export default function TicTacToe() {
             return 0;
         }
         if (count % 2 === 0) {
-            // e.target.innerHTML = `<img src='${cross}'>`;
             e.target.innerHTML = '<span class="bold-white">X</span>';
             data[num] = "x";
             setCount(++count);
@@ -63,39 +62,7 @@ export default function TicTacToe() {
 
     }
 
-    // const find_Winner = () => {
-    //     if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
-    //         Result(data[2]);
-    //     }
-    //     else if (data[3] === data[4] && data[4] === data[5] && data[5] !== "") {
-    //         Result(data[5]);
-    //     }
-    //     else if (data[6] === data[7] && data[7] === data[8] && data[8] !== "") {
-    //         Result(data[8]);
-    //     }
-    //     else if (data[0] === data[3] && data[3] === data[6] && data[6] !== "") {
-    //         Result(data[6]);
-    //     }
-    //     else if (data[1] === data[4] && data[4] === data[7] && data[7] !== "") {
-    //         Result(data[7]);
-    //     }
-    //     else if (data[2] === data[5] && data[5] === data[8] && data[8] !== "") {
-    //         Result(data[8]);
-    //     }
-    //     else if (data[0] === data[4] && data[4] === data[8] && data[8] !== "") {
-    //         Result(data[8]);
-    //     }
-    //     else if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
-    //         Result(data[2]);
-    //     }
-    //     else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
-    //         Result(data[6]);
-    //     }
 
-    //     if (!data.includes("")) {
-    //         declareTie();
-    //     }
-    // }
 
     const find_Winner = () => {
         const winPatterns = [
@@ -127,15 +94,14 @@ export default function TicTacToe() {
     const Result = (winner) => {
         setlock(true);
         if (winner === 'x') {
-            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is  <img src=${cross}>`
+            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is  <img src=${cross}> <img src="${celebration}"> `
         }
         else {
-            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is <img src=${circle}>`
+            titleRef.current.innerHTML = `Congratulations <img src="${celebration}"> Winner is <img src=${circle}> <img src="${celebration}">`
         }
         if (winner === null) {
             declareTie();
         }
-        setShowWinnerGif(true);
     }
 
     const declareTie = () => {
@@ -150,7 +116,6 @@ export default function TicTacToe() {
         titleRef.current.innerHTML = 'Hello <span class="waving-hand">👋</span> <span>The Game is Started AGAIN!!!</span>';
 
 
-        document.querySelector('.Container').classList.remove('showWinnerGif');
 
 
         box_array.map((e) => {
@@ -158,57 +123,45 @@ export default function TicTacToe() {
         })
     }
 
-    useEffect(() => {
-        if (showWinnerGif) {
-            // Add the 'showWinnerGif' class to the container when the winner is shown
-            document.querySelector('.Container').classList.add('showWinnerGif');
-        } else {
-            // Remove the 'showWinnerGif' class when the winner is not shown
-            document.querySelector('.Container').classList.remove('showWinnerGif');
-        }
-    }, [showWinnerGif]);
-
 
     return (
         <div className='Container'>
-            <div className={`Container ${showWinnerGif ? 'showWinnerGif' : ''}`}>
 
 
-                <h1 className='title' ref={titleRef}>Tic-taac-toe <span>winn</span></h1>
-                {/* <h1 className={`title ${showWinnerGif ? 'winner-animation' : ''}`} ref={titleRef}>
+            <h1 className='title' ref={titleRef}>Let's Play <span>TIC-TAC-TOE </span></h1>
+            {/* <h1 className={`title ${showWinnerGif ? 'winner-animation' : ''}`} ref={titleRef}>
                 Ticac-toe <span>winn</span>
           
           
           </h1> */}
 
-                <div className='board'>
-                    <div className="row1">
-                        <div className="Check_boxes" ref={Check_box1} onClick={(e) => { Toogling_func(e, 0) }}></div>
-                        <div className="Check_boxes" ref={Check_box2} onClick={(e) => { Toogling_func(e, 1) }}></div>
-                        <div className="Check_boxes" ref={Check_box3} onClick={(e) => { Toogling_func(e, 2) }}></div>
-
-                    </div>
-
-                    <div className="row2">
-                        <div className="Check_boxes" ref={Check_box4} onClick={(e) => { Toogling_func(e, 3) }}></div>
-                        <div className="Check_boxes" ref={Check_box5} onClick={(e) => { Toogling_func(e, 4) }}></div>
-                        <div className="Check_boxes" ref={Check_box6} onClick={(e) => { Toogling_func(e, 5) }}></div>
-
-                    </div>
-
-
-                    <div className="row3">
-                        <div className="Check_boxes" ref={Check_box7} onClick={(e) => { Toogling_func(e, 6) }}></div>
-                        <div className="Check_boxes" ref={Check_box8} onClick={(e) => { Toogling_func(e, 7) }}></div>
-                        <div className="Check_boxes" ref={Check_box9} onClick={(e) => { Toogling_func(e, 8) }}></div>
-
-                    </div>
-
-
+            <div className='board'>
+                <div className="row1">
+                    <div className="Check_boxes" ref={Check_box1} onClick={(e) => { Toogling_func(e, 0) }}></div>
+                    <div className="Check_boxes" ref={Check_box2} onClick={(e) => { Toogling_func(e, 1) }}></div>
+                    <div className="Check_boxes" ref={Check_box3} onClick={(e) => { Toogling_func(e, 2) }}></div>
 
                 </div>
-                <button className='reset' onClick={() => { reset() }}>Restart</button>
+
+                <div className="row2">
+                    <div className="Check_boxes" ref={Check_box4} onClick={(e) => { Toogling_func(e, 3) }}></div>
+                    <div className="Check_boxes" ref={Check_box5} onClick={(e) => { Toogling_func(e, 4) }}></div>
+                    <div className="Check_boxes" ref={Check_box6} onClick={(e) => { Toogling_func(e, 5) }}></div>
+
+                </div>
+
+
+                <div className="row3">
+                    <div className="Check_boxes" ref={Check_box7} onClick={(e) => { Toogling_func(e, 6) }}></div>
+                    <div className="Check_boxes" ref={Check_box8} onClick={(e) => { Toogling_func(e, 7) }}></div>
+                    <div className="Check_boxes" ref={Check_box9} onClick={(e) => { Toogling_func(e, 8) }}></div>
+
+                </div>
+
+
+
             </div>
+            <button className='reset' onClick={() => { reset() }}>Restart</button>
         </div>
     )
 }
